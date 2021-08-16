@@ -1,14 +1,22 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "justcallmefabi",
+    title: "Just call me Fabi",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: `jsx`,
+        allExtensions: true,
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "G-0E6PDT9K3D",
       },
     },
     "gatsby-plugin-react-helmet",
