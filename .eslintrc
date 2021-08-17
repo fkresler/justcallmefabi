@@ -43,7 +43,12 @@
         "plugin:@typescript-eslint/recommended",
         "airbnb-typescript",
         "prettier"
-      ]
+      ],
+      "rules": {
+        "prettier/prettier": "error",
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off"
+      }
     }
   ]
 }
