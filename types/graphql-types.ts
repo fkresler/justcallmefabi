@@ -747,6 +747,7 @@ export type SitePluginPluginOptions = {
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
   alwaysCheck?: Maybe<Scalars['Boolean']>;
+  typecheck?: Maybe<Scalars['Boolean']>;
   trackingId?: Maybe<Scalars['String']>;
   head?: Maybe<Scalars['Boolean']>;
   anonymize?: Maybe<Scalars['Boolean']>;
@@ -2430,6 +2431,7 @@ export type SitePluginPluginOptionsFilterInput = {
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
   alwaysCheck?: Maybe<BooleanQueryOperatorInput>;
+  typecheck?: Maybe<BooleanQueryOperatorInput>;
   trackingId?: Maybe<StringQueryOperatorInput>;
   head?: Maybe<BooleanQueryOperatorInput>;
   anonymize?: Maybe<BooleanQueryOperatorInput>;
@@ -2697,6 +2699,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___codegen'
   | 'pluginCreator___pluginOptions___codegenDelay'
   | 'pluginCreator___pluginOptions___alwaysCheck'
+  | 'pluginCreator___pluginOptions___typecheck'
   | 'pluginCreator___pluginOptions___trackingId'
   | 'pluginCreator___pluginOptions___head'
   | 'pluginCreator___pluginOptions___anonymize'
@@ -3468,6 +3471,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___codegen'
   | 'pluginOptions___codegenDelay'
   | 'pluginOptions___alwaysCheck'
+  | 'pluginOptions___typecheck'
   | 'pluginOptions___trackingId'
   | 'pluginOptions___head'
   | 'pluginOptions___anonymize'

@@ -8,7 +8,7 @@ const footerStyle = {
 };
 
 export const Footer: React.FC = () => (
-  <footer style={footerStyle}>© 2021 Fabian Kresler</footer>
+  <footer style={footerStyle}>© 2021-present Fabian Kresler</footer>
 );
 
 export default Footer;

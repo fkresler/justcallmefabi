@@ -17,15 +17,6 @@ module.exports = {
         allExtensions: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-ts`,
-      options: {
-        fileName: `types/graphql-types.ts`,
-        codegen: true,
-        codegenDelay: 250,
-        alwaysCheck: false,
-      },
-    },
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',
