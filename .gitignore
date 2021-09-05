@@ -9,6 +9,7 @@
 # gatsby
 .cache/
 public/
+build/
 
 # misc
 .DS_Store

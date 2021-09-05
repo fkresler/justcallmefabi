@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "esnext",
+    "module": "ES2015",
+    "target": "ES2015",
     "jsx": "preserve",
     "lib": [
       "dom",
       "es2015",
       "es2017"
     ],
+    "moduleResolution": "node",
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
-  }
+    "preserveConstEnums": true,
+    "outDir": "./build"
+  },
 }

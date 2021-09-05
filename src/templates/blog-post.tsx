@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { BlogPostBySlugQuery } from '../../types/graphql-types';
 
-const BlogPostTemplate: React.FC = ({ data }) => {
+const BlogPostTemplate: React.FC<{ data: BlogPostBySlugQuery }> = ({
+  data,
+}) => {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
   return (
@@ -15,14 +17,17 @@ const BlogPostTemplate: React.FC = ({ data }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          {post?.frontmatter?.title && (
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          )}
+          {post?.frontmatter?.date && <p>{post.frontmatter.date}</p>}
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
+        {post?.html && (
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+        )}
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -35,14 +40,14 @@ const BlogPostTemplate: React.FC = ({ data }) => {
           }}
         >
           <li>
-            {previous && (
+            {previous && previous.fields?.slug && previous.frontmatter?.title && (
               <Link to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
-            {next && (
+            {next && next.fields?.slug && next.frontmatter?.title && (
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>

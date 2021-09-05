@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { ContentDataQuery } from '../../types/graphql-types';
 
-const IndexPage: React.FC = ({ data }) => {
+const IndexPage: React.FC<{ data: ContentDataQuery }> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
@@ -10,22 +11,27 @@ const IndexPage: React.FC = ({ data }) => {
       <title>Just Call Me Fabi</title>
       <h1>Welcome to my personal space!</h1>
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
+        const title = node.frontmatter?.title || node.fields?.slug;
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields?.slug}>
             <header>
-              <h3>
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+              {node.fields?.slug && (
+                <h3>
+                  <Link to={node.fields.slug}>{title}</Link>
+                </h3>
+              )}
+              {node.frontmatter?.date && <small>{node.frontmatter.date}</small>}
             </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
+            {node.frontmatter?.description && (
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      node.frontmatter.description || (node.excerpt as string),
+                  }}
+                />
+              </section>
+            )}
           </article>
         );
       })}
@@ -36,7 +42,7 @@ const IndexPage: React.FC = ({ data }) => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query {
+  query ContentData {
     site {
       siteMetadata {
         title
