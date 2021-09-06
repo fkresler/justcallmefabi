@@ -41,7 +41,7 @@ export const Header: React.FC = () => (
   <header style={headerStyle}>
     <div style={widthWrapper}>
       <Link to="/" style={mainNavigationStyle}>
-        Fabian Kresler!
+        Hey Fabi!
       </Link>
       <ul style={navigationStyle}>
         <li>

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { Card } from '../components/Card';
+import { AboutMe } from '../components/AboutMe';
 import { ContentDataQuery } from '../../types/graphql-types';
 
 const IndexPage: React.FC<{ data: ContentDataQuery }> = ({ data }) => {
@@ -10,28 +12,34 @@ const IndexPage: React.FC<{ data: ContentDataQuery }> = ({ data }) => {
     <Layout>
       <title>Just Call Me Fabi</title>
       <h1>Welcome to my personal space!</h1>
+      <AboutMe />
       {posts.map(({ node }) => {
         const title = node.frontmatter?.title || node.fields?.slug;
         return (
           <article key={node.fields?.slug}>
-            <header>
-              {node.fields?.slug && (
-                <h3>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h3>
+            <Card>
+              <header>
+                {node.fields?.slug && (
+                  <h3>
+                    <Link to={node.fields.slug}>{title}</Link>
+                  </h3>
+                )}
+                {node.frontmatter?.date && (
+                  <small>{node.frontmatter.date}</small>
+                )}
+              </header>
+              {node.frontmatter?.description && (
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        node.frontmatter.description ||
+                        (node.excerpt as string),
+                    }}
+                  />
+                </section>
               )}
-              {node.frontmatter?.date && <small>{node.frontmatter.date}</small>}
-            </header>
-            {node.frontmatter?.description && (
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      node.frontmatter.description || (node.excerpt as string),
-                  }}
-                />
-              </section>
-            )}
+            </Card>
           </article>
         );
       })}
