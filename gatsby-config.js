@@ -17,6 +17,12 @@ module.exports = {
         allExtensions: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {
+        outputPath: './src/generated/gatsby-types.d.ts',
+      },
+    },
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',
