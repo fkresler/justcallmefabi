@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import { Layout } from '../components/Layout';
+import { InternalLink } from '../components/InternalLink';
 
 const NotFoundPage: React.FC = () => (
   <Layout>
@@ -10,7 +10,7 @@ const NotFoundPage: React.FC = () => (
       Sorry we couldn’t find what you were looking for.
       <br />
       <br />
-      <Link to="/">Go home</Link>.
+      <InternalLink to="/">Go home</InternalLink>.
     </p>
   </Layout>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { InternalLink } from './InternalLink';
 
 const headerStyle = {
   zIndex: 10,
@@ -7,7 +7,8 @@ const headerStyle = {
   padding: '1rem',
   position: 'sticky' as const,
   top: '0',
-  backgroundColor: '#6a0136',
+  backgroundColor: 'rgba(106, 1, 54, 0.8)',
+  backdropFilter: 'blur(10px)',
 };
 
 const widthWrapper = {
@@ -19,7 +20,6 @@ const widthWrapper = {
 };
 
 const mainNavigationStyle = {
-  color: '#fff',
   fontSize: '1.5rem',
   letterSpacing: '-1px',
   marginRight: '2rem',
@@ -33,31 +33,20 @@ const navigationStyle = {
 };
 
 const navigationLink = {
-  color: '#fff',
   padding: '0.75rem',
 };
 
 export const Header: React.FC = () => (
   <header style={headerStyle}>
     <div style={widthWrapper}>
-      <Link to="/" style={mainNavigationStyle}>
+      <InternalLink to="/" style={mainNavigationStyle}>
         Hey Fabi!
-      </Link>
+      </InternalLink>
       <ul style={navigationStyle}>
         <li>
-          <Link to="/blog" style={navigationLink}>
-            Blogging
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" style={navigationLink}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" style={navigationLink}>
-            Contact
-          </Link>
+          <InternalLink to="/blog" style={navigationLink}>
+            Posts
+          </InternalLink>
         </li>
       </ul>
     </div>

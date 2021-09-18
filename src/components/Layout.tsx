@@ -5,8 +5,9 @@ import './layout.css';
 
 const contentStyle = {
   display: 'block',
-  maxWidth: '70rem',
+  maxWidth: '74rem',
   margin: '2rem auto',
+  padding: '2rem',
 };
 
 export const Layout: React.FC = ({ children }) => (

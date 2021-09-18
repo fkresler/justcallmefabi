@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { Card } from '../components/Card';
 import { AboutMe } from '../components/AboutMe';
-import { ContentDataQuery } from '../../types/graphql-types';
+import { CardContainer } from '../components/CardContainer';
+import { BlogEntry } from '../components/BlogEntry';
 
-const IndexPage: React.FC<{ data: ContentDataQuery }> = ({ data }) => {
+const IndexPage: React.FC<{ data: GatsbyTypes.ContentDataQuery }> = ({
+  data,
+}) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
@@ -13,36 +15,11 @@ const IndexPage: React.FC<{ data: ContentDataQuery }> = ({ data }) => {
       <title>Just Call Me Fabi</title>
       <h1>Welcome to my personal space!</h1>
       <AboutMe />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter?.title || node.fields?.slug;
-        return (
-          <article key={node.fields?.slug}>
-            <Card>
-              <header>
-                {node.fields?.slug && (
-                  <h3>
-                    <Link to={node.fields.slug}>{title}</Link>
-                  </h3>
-                )}
-                {node.frontmatter?.date && (
-                  <small>{node.frontmatter.date}</small>
-                )}
-              </header>
-              {node.frontmatter?.description && (
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        node.frontmatter.description ||
-                        (node.excerpt as string),
-                    }}
-                  />
-                </section>
-              )}
-            </Card>
-          </article>
-        );
-      })}
+      <CardContainer>
+        {posts.map(({ node }) => (
+          <BlogEntry node={node} />
+        ))}
+      </CardContainer>
     </Layout>
   );
 };
