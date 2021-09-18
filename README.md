@@ -32,3 +32,4 @@
 ## Used Gatsby plugins
 
 - `gatsby-plugin-typegen`: used to dynamically generate types at build time from graphql data and queries
+- `gatsby-plugin-google-gtag`: used to connect to Google analytics and measure the performance of the page
