@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { BlogPostBySlugQuery } from '../../types/graphql-types';
+import { InternalLink } from '../components/InternalLink';
 
-const BlogPostTemplate: React.FC<{ data: BlogPostBySlugQuery }> = ({
+const BlogPostTemplate: React.FC<{ data: GatsbyTypes.BlogPostBySlugQuery }> = ({
   data,
 }) => {
   const post = data.markdownRemark;
@@ -41,16 +41,16 @@ const BlogPostTemplate: React.FC<{ data: BlogPostBySlugQuery }> = ({
         >
           <li>
             {previous && previous.fields?.slug && previous.frontmatter?.title && (
-              <Link to={previous.fields.slug} rel="prev">
+              <InternalLink to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
-              </Link>
+              </InternalLink>
             )}
           </li>
           <li>
             {next && next.fields?.slug && next.frontmatter?.title && (
-              <Link to={next.fields.slug} rel="next">
+              <InternalLink to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </InternalLink>
             )}
           </li>
         </ul>

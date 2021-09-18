@@ -2,9 +2,10 @@ import * as React from 'react';
 
 const cardWrapperStyle = {
   display: 'block',
-  borderRadius: '5px',
-  padding: '0.5rem',
-  backgroundColor: '#6a0136',
+  borderRadius: '0.5rem',
+  padding: '2rem',
+  backgroundColor: '#172a3a',
+  color: '#fff',
 };
 
 export const Card: React.FC = ({ children }) => (
