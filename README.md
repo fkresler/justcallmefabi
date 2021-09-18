@@ -31,4 +31,4 @@
 
 ## Used Gatsby plugins
 
-- `gatsby-plugin-ts`: used to dynamically generate types at build time from graphql data and queries
+- `gatsby-plugin-typegen`: used to dynamically generate types at build time from graphql data and queries
