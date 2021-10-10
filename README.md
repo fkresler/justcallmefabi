@@ -33,3 +33,7 @@
 
 - `gatsby-plugin-typegen`: used to dynamically generate types at build time from graphql data and queries
 - `gatsby-plugin-google-gtag`: used to connect to Google analytics and measure the performance of the page
+
+## More features
+
+- `published`: flag in each content file to indicate whether the blog post should already be published and visible in the list of blog posts
