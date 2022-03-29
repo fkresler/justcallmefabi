@@ -33,8 +33,14 @@ const navigationStyle = {
 };
 
 const navigationLink = {
-  padding: '0.75rem',
+  padding: '0.75rem 1.75rem',
 };
+
+const HeaderLink: React.FC<{ to: string }> = ({ to, children }) => (
+  <InternalLink to={to} style={navigationLink}>
+    {children}
+  </InternalLink>
+);
 
 export const Header: React.FC = () => (
   <header style={headerStyle}>
@@ -44,9 +50,13 @@ export const Header: React.FC = () => (
       </InternalLink>
       <ul style={navigationStyle}>
         <li>
-          <InternalLink to="/blog" style={navigationLink}>
-            Posts
-          </InternalLink>
+          <HeaderLink to="/about">About</HeaderLink>
+        </li>
+        <li>
+          <HeaderLink to="/work">Work</HeaderLink>
+        </li>
+        <li>
+          <HeaderLink to="/blog">Posts</HeaderLink>
         </li>
       </ul>
     </div>

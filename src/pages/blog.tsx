@@ -10,6 +10,7 @@ const BlogPage: React.FC<{ data: GatsbyTypes.BlogContentQuery }> = ({
   const posts = data.allMarkdownRemark.edges;
   return (
     <Layout>
+      <h1>Anytime I write something technical I will publish it here</h1>
       <CardContainer>
         {posts.map(({ node }) => (
           <BlogEntry node={node} />
