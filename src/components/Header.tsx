@@ -50,13 +50,13 @@ export const Header: React.FC = () => (
       </InternalLink>
       <ul style={navigationStyle}>
         <li>
+          <HeaderLink to="/projects">Projects</HeaderLink>
+        </li>
+        <li>
           <HeaderLink to="/about">About</HeaderLink>
         </li>
         <li>
-          <HeaderLink to="/work">Work</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink to="/blog">Posts</HeaderLink>
+          <HeaderLink to="/contact">Contact</HeaderLink>
         </li>
       </ul>
     </div>
