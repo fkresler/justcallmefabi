@@ -1,4 +1,5 @@
 import React from 'react';
+import { Additionals } from './Additionals';
 
 const footerStyle = {
   padding: '3rem',
@@ -11,7 +12,10 @@ export const Footer: React.FC = () => {
   const currentFullYear = new Date().getFullYear();
 
   return (
-    <footer style={footerStyle}>© 2021-{currentFullYear} Fabian Kresler</footer>
+    <footer style={footerStyle}>
+      <Additionals />
+      <div>© 2021-{currentFullYear} Fabian Kresler</div>
+    </footer>
   );
 };
 
