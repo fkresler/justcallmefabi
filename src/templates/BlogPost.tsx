@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { Layout } from '../components/Layout';
-import { InternalLink } from '../components/InternalLink';
+import { InternalLink } from '../components/Link';
 
 const BlogPostTemplate: React.FC<{ data: GatsbyTypes.BlogPostBySlugQuery }> = ({
   data,

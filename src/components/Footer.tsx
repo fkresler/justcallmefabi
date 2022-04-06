@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer style={footerStyle}>
-      <Additionals />
+      <Additionals layout="flex-end" />
       <div>© 2021-{currentFullYear} Fabian Kresler</div>
     </footer>
   );

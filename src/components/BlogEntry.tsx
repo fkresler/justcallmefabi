@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card } from './Card';
-import { InternalLink } from './InternalLink';
+import { InternalLink } from './Link';
 
 type BlogEntryDefinition = Pick<GatsbyTypes.MarkdownRemark, 'excerpt'> & {
   readonly fields: GatsbyTypes.Maybe<Pick<GatsbyTypes.Fields, 'slug'>>;

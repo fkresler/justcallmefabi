@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from '../components/Layout';
-import { InternalLink } from '../components/InternalLink';
+import { InternalLink } from '../components/Link';
 
 const NotFoundPage: React.FC = () => (
   <Layout>

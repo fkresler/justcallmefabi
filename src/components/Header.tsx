@@ -1,5 +1,5 @@
 import React from 'react';
-import { InternalLink } from './InternalLink';
+import { InternalLink } from './Link';
 
 const headerStyle = {
   zIndex: 10,
