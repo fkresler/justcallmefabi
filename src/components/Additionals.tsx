@@ -19,7 +19,7 @@ export const Additionals: React.FC<{
     }}
   >
     <li>
-      <ExternalLink to="https://github.com/fkresler/fkresler">
+      <ExternalLink to="https://github.com/fkresler/">
         <FaGithub />
       </ExternalLink>
     </li>
