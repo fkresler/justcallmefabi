@@ -1,0 +1,60 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.wrapper {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  width: 3.5rem;
+  height: 2rem;
+  padding: 0.25rem;
+}
+
+.background {
+  opacity: 1;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  transition: all ease-out 0.2s;
+}
+
+.handleActive {
+  left: 90%;
+  transform: translate(-100%, -50%);
+}
+
+.handleContent {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: red;
+  transition: all ease-out 0.2s;
+}
+
+.handleContentActive {
+  background-color: green;
+}

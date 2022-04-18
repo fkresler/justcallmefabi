@@ -3,8 +3,7 @@ import { Additionals } from './Additionals';
 
 const footerStyle = {
   padding: '3rem',
-  backgroundColor: '#172A3A',
-  color: '#fff',
+  backgroundColor: 'var(--backgrounddark)',
   textAlign: 'center' as const,
 };
 

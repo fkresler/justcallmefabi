@@ -1,0 +1,22 @@
+/*
+  Adapted according to guide from:
+  https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/
+*/
+
+:root {
+  --headersize: 5rem;
+
+  --backgrounddark: #ffffff;
+  --backgroundlight: #ffffff;
+  --text-primary: black;
+  --text-secondary: royalblue;
+  --accent: 106, 1, 54;
+}
+
+[data-theme='dark'] {
+  --backgrounddark: #020d12;
+  --backgroundlight: #062837;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: 106, 1, 54;
+}

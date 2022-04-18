@@ -8,11 +8,12 @@
     "gatsby"
   ],
   "scripts": {
-    "types": "tsc --noEmit",
-    "lint": "eslint --ext .js,.ts,.tsx src/",
-    "lint:fix": "eslint --fix --ext .js,.ts,.tsx src/",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "check": "tsc --noEmit",
+    "generate:css": "tcm -p 'src/**/*.module.css' .",
+    "lint": "npm run generate:css && eslint --ext .js,.ts,.tsx src/",
+    "lint:fix": "npm run generate:css && eslint --fix --ext .js,.ts,.tsx src/",
+    "start": "npm run generate:css && gatsby develop",
+    "build": "npm run generate:css && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -54,6 +55,7 @@
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
+    "typed-css-modules": "^0.7.0",
     "typescript": "^4.3.5"
   }
 }
