@@ -18,13 +18,16 @@ export const NavigationLink: React.FC<{ to: string }> = ({ to, children }) => (
 export const Navigation: React.FC = () => (
   <ul style={navigationStyle}>
     <li style={navigationItemStyle}>
-      <NavigationLink to="/projects">Projects</NavigationLink>
+      <NavigationLink to="/#capabilities">Capabilities</NavigationLink>
+    </li>
+    <li style={navigationItemStyle}>
+      <NavigationLink to="/#projects">Projects</NavigationLink>
     </li>
     <li style={navigationItemStyle}>
       <NavigationLink to="/about">About</NavigationLink>
     </li>
     <li style={navigationItemStyle}>
-      <NavigationLink to="/contact">Contact</NavigationLink>
+      <NavigationLink to="/blog">Blog</NavigationLink>
     </li>
   </ul>
 );

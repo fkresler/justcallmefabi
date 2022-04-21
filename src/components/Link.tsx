@@ -6,6 +6,7 @@ const linkStyle = {
   textDecoration: 'none',
   lineHeight: '1.6',
 };
+
 export const InternalLink: React.FC<React.ComponentProps<typeof Link>> = ({
   style,
   to,
