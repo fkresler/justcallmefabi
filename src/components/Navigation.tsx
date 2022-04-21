@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => (
       <NavigationLink to="/#projects">Projects</NavigationLink>
     </li>
     <li style={navigationItemStyle}>
-      <NavigationLink to="/about">About</NavigationLink>
+      <NavigationLink to="/#contact">Contact</NavigationLink>
     </li>
     <li style={navigationItemStyle}>
       <NavigationLink to="/blog">Blog</NavigationLink>
