@@ -5,18 +5,22 @@
 
 :root {
   --headersize: 5rem;
+}
 
-  --backgrounddark: #ffffff;
-  --backgroundlight: #ffffff;
-  --text-primary: black;
+[data-theme='light'] {
+  --background-dark: #f6f6f6;
+  --background-light: #ffffff;
+  --text-primary: #000000;
   --text-secondary: royalblue;
   --accent: 106, 1, 54;
+  --border-color: #d3d3d3;
 }
 
 [data-theme='dark'] {
-  --backgrounddark: #020d12;
-  --backgroundlight: #062837;
-  --text-primary: white;
-  --text-secondary: grey;
+  --background-dark: #020d12;
+  --background-light: #062837;
+  --text-primary: #ffffff;
+  --text-secondary: #808080;
   --accent: 106, 1, 54;
+  --border-color: #d3d3d3;
 }

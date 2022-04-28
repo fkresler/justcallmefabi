@@ -3,8 +3,9 @@ import { Additionals } from './Additionals';
 
 const footerStyle = {
   padding: '3rem',
-  backgroundColor: 'var(--backgrounddark)',
   textAlign: 'center' as const,
+  borderTop: '1px solid var(--border-color)',
+  backgroundColor: 'var(--background-dark)',
 };
 
 export const Footer: React.FC = () => {

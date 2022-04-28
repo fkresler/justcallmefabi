@@ -2,12 +2,13 @@ import * as React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
-const backgroundStyle = {
+const backgroundGradientStyle = {
   display: 'block',
+  minHeight: '100vh',
   marginTop: 'calc(var(--headersize)*-1)',
   paddingTop: 'var(--headersize)',
   background:
-    'linear-gradient(0deg, var(--backgrounddark) 0%, var(--backgroundlight) 100%)',
+    'linear-gradient(0deg, var(--background-dark) 0%, var(--background-light) 100%)',
 };
 
 const contentStyle = {
@@ -20,7 +21,7 @@ const contentStyle = {
 export const Layout: React.FC = ({ children }) => (
   <>
     <Header />
-    <main style={backgroundStyle}>
+    <main style={backgroundGradientStyle}>
       <div style={contentStyle}>{children}</div>
     </main>
     <Footer />
