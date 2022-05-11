@@ -23,7 +23,11 @@ const defaultIconStyles = {
 };
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const defaultDark =
+    typeof window !== 'undefined'
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
+      : true;
+
   const [theme, setTheme] = React.useState<AvailableThemes>(
     defaultDark ? 'dark' : 'light',
   );
