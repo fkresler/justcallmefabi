@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Layout } from '../components/Layout';
 import { InternalLink } from '../components/Link';
 
 const NotFoundPage: React.FC = () => (
-  <Layout>
+  <>
     <title>Not found</title>
     <h1>Page not found</h1>
     <p>
@@ -12,7 +11,7 @@ const NotFoundPage: React.FC = () => (
       <br />
       <InternalLink to="/">Go home</InternalLink>.
     </p>
-  </Layout>
+  </>
 );
 
 export default NotFoundPage;

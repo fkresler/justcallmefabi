@@ -9,6 +9,11 @@
   top: 0;
   background-color: rgba(var(--accent), 0.8);
   backdrop-filter: blur(10px);
+  color: var(--accent-color-text);
+}
+
+.headerNavWrapper {
+  display: none;
 }
 
 .fullNavWrapper {
@@ -31,12 +36,16 @@
   transform: translateX(0);
 }
 
-.mobileNav {
+.fullNavTrigger {
   display: inline-block;
 }
 
 @media (min-width: 768px) {
-  .mobileNav {
+  .fullNavTrigger {
     display: none;
+  }
+
+  .headerNavWrapper {
+    display: inline-block;
   }
 }

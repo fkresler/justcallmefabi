@@ -2,9 +2,10 @@ import * as React from 'react';
 import { FaStream } from 'react-icons/fa';
 import {
   headerWrapper,
+  headerNavWrapper,
   fullNavWrapper,
   fullNavWrapperOpen,
-  mobileNav,
+  fullNavTrigger,
 } from './Header.module.css';
 import { MainLogo } from './MainLogo';
 import { ThemeSelect } from './ThemeSelect';
@@ -17,6 +18,10 @@ export const Header: React.FC = () => {
     setIsFullNavOpen(!isFullNavOpen);
   };
 
+  const closeFullNav = () => {
+    setIsFullNavOpen(false);
+  };
+
   const fullNavClasses = isFullNavOpen
     ? [fullNavWrapper, fullNavWrapperOpen].join(' ')
     : fullNavWrapper;
@@ -24,16 +29,18 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className={headerWrapper}>
-        <MainLogo />
+        <MainLogo onClick={closeFullNav} />
         <ThemeSelect />
-        <Navigation />
-        <div className={mobileNav}>
+        <nav className={headerNavWrapper}>
+          <Navigation onNavigate={closeFullNav} />
+        </nav>
+        <div className={fullNavTrigger}>
           <FaStream onClick={toggleFullNav} />
         </div>
       </header>
-      <div className={fullNavClasses}>
-        <Navigation direction="vertical" />
-      </div>
+      <nav className={fullNavClasses}>
+        <Navigation direction="vertical" onNavigate={closeFullNav} />
+      </nav>
     </>
   );
 };
