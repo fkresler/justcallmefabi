@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from '../components/Layout';
 import { CardContainer } from '../components/CardContainer';
 import { BlogEntry } from '../components/BlogEntry';
 
@@ -9,14 +8,14 @@ const BlogPage: React.FC<{ data: GatsbyTypes.BlogContentQuery }> = ({
 }) => {
   const posts = data.allMarkdownRemark.edges;
   return (
-    <Layout>
+    <>
       <h1>Anytime I write something technical I will publish it here</h1>
       <CardContainer>
         {posts.map(({ node }) => (
           <BlogEntry node={node} />
         ))}
       </CardContainer>
-    </Layout>
+    </>
   );
 };
 

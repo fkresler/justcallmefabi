@@ -1,0 +1,13 @@
+.normal {
+  cursor: pointer;
+  padding: 4px 8px;
+  background-color: var(--accent-color);
+  color: var(--accent-color-text);
+}
+
+.text {
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from '../components/Layout';
 import { InternalLink } from '../components/Link';
 
 const BlogPostTemplate: React.FC<{ data: GatsbyTypes.BlogPostBySlugQuery }> = ({
@@ -10,7 +9,7 @@ const BlogPostTemplate: React.FC<{ data: GatsbyTypes.BlogPostBySlugQuery }> = ({
   const { previous, next } = data;
 
   return (
-    <Layout>
+    <>
       <article
         className="blog-post"
         itemScope
@@ -40,22 +39,24 @@ const BlogPostTemplate: React.FC<{ data: GatsbyTypes.BlogPostBySlugQuery }> = ({
           }}
         >
           <li>
-            {previous && previous.fields?.slug && previous.frontmatter?.title && (
-              <InternalLink to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </InternalLink>
-            )}
+            {previous &&
+              previous.fields?.slug &&
+              previous.frontmatter?.title && (
+                <InternalLink to={previous.fields.slug}>
+                  ← {previous.frontmatter.title}
+                </InternalLink>
+              )}
           </li>
           <li>
             {next && next.fields?.slug && next.frontmatter?.title && (
-              <InternalLink to={next.fields.slug} rel="next">
+              <InternalLink to={next.fields.slug}>
                 {next.frontmatter.title} →
               </InternalLink>
             )}
           </li>
         </ul>
       </nav>
-    </Layout>
+    </>
   );
 };
 

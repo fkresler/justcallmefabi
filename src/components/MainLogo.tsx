@@ -1,17 +1,10 @@
 import * as React from 'react';
-import { InternalLink } from './Link';
+import { Button } from './Button';
 
-const mainNavigationStyle = {
-  fontSize: '1.5rem',
-  letterSpacing: '-1px',
-  marginRight: '2rem',
-  textDecoration: 'none',
-};
-
-export const MainLogo: React.FC = () => (
-  <InternalLink to="/" style={mainNavigationStyle}>
+export const MainLogo: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+  <Button internalTo="/" onClick={onClick}>
     Fabi
-  </InternalLink>
+  </Button>
 );
 
 export default MainLogo;

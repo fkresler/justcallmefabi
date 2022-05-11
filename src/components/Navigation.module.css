@@ -1,0 +1,18 @@
+.navigationWrapper {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-align: center;
+}
+
+.navigationWrapperVertical {
+  flex-direction: column;
+}
+
+.navigationItem {
+  padding: 0 16px;
+}
+
+.navigationItemVertical {
+  padding: 16px 0;
+}

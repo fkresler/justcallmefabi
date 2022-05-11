@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { PageProps, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Layout } from '../components/Layout';
 import { Section } from '../components/Section';
 
 const imageStyle = {
@@ -20,7 +19,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
   }, [hash]);
 
   return (
-    <Layout>
+    <>
       <Section id="start">
         <h3>Hey there, I'm Fabi!</h3>
         <h1>Frontend developer</h1>
@@ -57,7 +56,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
         <h2>Contact</h2>
         <h3>Here I plan to include a section on how you can contact me!</h3>
       </Section>
-    </Layout>
+    </>
   );
 };
 
