@@ -13,6 +13,8 @@
   --text-primary: #000000;
   --text-secondary: royalblue;
   --accent: 106, 1, 54;
+  --accent-color: hsl(330, 98%, 21%);
+  --accent-color-text: #ffffff;
   --border-color: #d3d3d3;
 }
 
@@ -22,5 +24,7 @@
   --text-primary: #ffffff;
   --text-secondary: #808080;
   --accent: 106, 1, 54;
+  --accent-color: hsl(330, 98%, 21%);
+  --accent-color-text: #ffffff;
   --border-color: #d3d3d3;
 }
